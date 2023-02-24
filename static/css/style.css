@@ -1,0 +1,51 @@
+
+body {
+    margin: 0px 0px 8px 0px;
+}
+
+#navbar {
+    display: flex;
+    position: sticky;
+    top: 0px;
+    background-color: #eeeeee;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#navbar > p {
+    color: gray;
+    margin-inline-start: 1em;
+    cursor: pointer;
+}
+
+#navbar > p:hover {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#body {
+    margin: 0px 20px;
+}
+
+/*Style of dynamically added elements:*/
+
+#pagination > button,
+button.residents,
+button.vote
+{
+    color: white;
+    background-color: cornflowerblue;
+    border-color: gray;
+    border-radius: 5%;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#pagination > button:hover,
+button.residents:hover,
+button.vote:hover
+{
+    box-shadow: 4px 4px 8px cornflowerblue;
+}
+
+#pagination > button.next {
+    margin: 0 0 0 5px;
+}
