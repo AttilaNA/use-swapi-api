@@ -34,28 +34,44 @@ body {
     border-radius: 5%;
     padding: 5px 10px;
     cursor: pointer;
+    margin: 0 0 10px 0;
 }
 
-button.residents,
-button.vote {
-    color: white;
-    background-color: gray;
-    border-color: gray;
-    border-radius: 5%;
-    padding: 5px 10px;
-    cursor: pointer;
+#pagination > button.next {
+    margin: 0 0 10px 5px;
 }
 
 #pagination > button:hover {
     box-shadow: 4px 4px 8px cornflowerblue;
 }
 
+button.residents,
+button.vote {
+    color: black;
+    background-color: lightgray;
+    border-color: lightgray;
+    border-radius: 5%;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
 button.residents:hover,
 button.vote:hover
 {
-    box-shadow: 4px 4px 8px gray;
+    box-shadow: 4px 4px 8px lightgray;
 }
 
-#pagination > button.next {
-    margin: 0 0 0 5px;
+th, td {
+    padding: 5px;
+    border: 1px solid lightgray;
+}
+
+th {
+    text-align: left;
+    border-bottom: 3px solid lightgray;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
 }

@@ -33,19 +33,19 @@ function drawPagination(next, previous){
     }
 }
 
+function drawButton({className, content}){
+    const button = document.createElement("button");
+    button.textContent = `${content}`;
+    button.classList.add(className);
+    return button;
+}
+
 async function reBuildPage(button){
     deleteFirstChildElement({parentElement: document.getElementById("table")});
     deleteChildElements({parentElement: document.getElementById("pagination")});
     const response = await getData(button.getAttribute("data-url"));
     drawPagination(response.next, response.previous);
     drawPlanetTable({className: "planet", results: response.results});
-}
-
-function drawButton({className, content}){
-    const button = document.createElement("button");
-    button.textContent = `${content}`;
-    button.classList.add(className);
-    return button;
 }
 
 function appendElementToItsParent({parentElement, childElement}){
