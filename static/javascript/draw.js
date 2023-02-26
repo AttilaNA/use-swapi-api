@@ -1,3 +1,5 @@
+import {deleteChildElements, deleteFirstChildElement} from "./delete.js";
+import {getData} from "./request.js";
 
 const constants = {
     planetTableHeads: {
@@ -15,12 +17,28 @@ const constants = {
 function drawPagination(next, previous){
     if(previous !== null){
         const button = drawButton({className: "previous", content: "Previous"});
-        appendElementToItsParent({parent: document.getElementById("pagination"), element: button})
+        button.setAttribute("data-url", previous);
+        button.addEventListener("click", function (){
+            reBuildPage(button);
+        });
+        appendElementToItsParent({parentElement: document.getElementById("pagination"), childElement: button})
     }
     if(next !== null){
         const button = drawButton({className: "next", content: "Next"});
+        button.setAttribute("data-url", next);
+        button.addEventListener("click", function (){
+            reBuildPage(button);
+        });
         appendElementToItsParent({parentElement: document.getElementById("pagination"), childElement: button})
     }
+}
+
+async function reBuildPage(button){
+    deleteFirstChildElement({parentElement: document.getElementById("table")});
+    deleteChildElements({parentElement: document.getElementById("pagination")});
+    const response = await getData(button.getAttribute("data-url"));
+    drawPagination(response.next, response.previous);
+    drawPlanetTable({className: "planet", results: response.results});
 }
 
 function drawButton({className, content}){
@@ -34,13 +52,7 @@ function appendElementToItsParent({parentElement, childElement}){
     parentElement.appendChild(childElement);
 }
 
-function drawSpreadSheet(results){
-    if(results){
-        drawPlanetTable("planets", results);
-    }
-}
-
-function drawPlanetTable(className, results){
+function drawPlanetTable({className, results}){
     const table = document.createElement("table");
     table.classList.add(className);
     appendElementToItsParent({parentElement: document.getElementById("table"), childElement: table});
@@ -109,4 +121,4 @@ function addData(key, item, td){
     }
 }
 
-export { drawPagination, drawSpreadSheet };
+export { drawPagination, drawPlanetTable };

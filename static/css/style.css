@@ -27,23 +27,33 @@ body {
 
 /*Style of dynamically added elements:*/
 
-#pagination > button,
-button.residents,
-button.vote
-{
+#pagination > button {
     color: white;
     background-color: cornflowerblue;
+    border-color: cornflowerblue;
+    border-radius: 5%;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button.residents,
+button.vote {
+    color: white;
+    background-color: gray;
     border-color: gray;
     border-radius: 5%;
     padding: 5px 10px;
     cursor: pointer;
 }
 
-#pagination > button:hover,
+#pagination > button:hover {
+    box-shadow: 4px 4px 8px cornflowerblue;
+}
+
 button.residents:hover,
 button.vote:hover
 {
-    box-shadow: 4px 4px 8px cornflowerblue;
+    box-shadow: 4px 4px 8px gray;
 }
 
 #pagination > button.next {
