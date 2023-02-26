@@ -11,6 +11,12 @@ body {
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+@media (max-width: 430px) {
+    #navbar {
+        display: block;
+    }
+}
+
 #navbar > p {
     color: gray;
     margin-inline-start: 1em;
@@ -74,4 +80,26 @@ th {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+}
+
+@media (max-width: 705px) {
+  table {
+    display: block;
+  }
+  table thead {
+    display: none;
+  }
+  table tbody {
+    display: block;
+  }
+  table tbody tr {
+    display: block;
+    margin-bottom: 10px;
+  }
+  table tbody td {
+    display: block;
+    text-align: right;
+    padding: 10px;
+    font-size: 16px;
+  }
 }
