@@ -15,22 +15,27 @@ const constants = {
 }
 
 function drawPagination(next, previous){
-    if(previous !== null){
-        const button = drawButton({className: "previous", content: "Previous"});
-        button.setAttribute("data-url", previous);
-        button.addEventListener("click", function (){
-            reBuildPage(button);
+    let previousButton = drawButton({className: "previous", content: "Previous"});
+    let nextButton = drawButton({className: "next", content: "Next"});
+    if(previous === null){
+        previousButton.classList.add("disabled");
+        previousButton.disabled = true;
+    } else {
+        previousButton.setAttribute("data-url", previous);
+        previousButton.addEventListener("click", function (){
+            reBuildPage(previousButton);
         });
-        appendElementToItsParent({parentElement: document.getElementById("pagination"), childElement: button})
     }
-    if(next !== null){
-        const button = drawButton({className: "next", content: "Next"});
-        button.setAttribute("data-url", next);
-        button.addEventListener("click", function (){
-            reBuildPage(button);
+    if(next === null){
+        nextButton.classList.add("disabled");
+        nextButton.disabled = true;
+    } else {
+        nextButton.setAttribute("data-url", next);
+        nextButton.addEventListener("click", function (){
+            reBuildPage(nextButton);
         });
-        appendElementToItsParent({parentElement: document.getElementById("pagination"), childElement: button})
     }
+    appendElementsToTheirParent({parentElement: document.getElementById("pagination"), childElements: [previousButton, nextButton]})
 }
 
 function drawButton({className, content}){
@@ -50,6 +55,10 @@ async function reBuildPage(button){
 
 function appendElementToItsParent({parentElement, childElement}){
     parentElement.appendChild(childElement);
+}
+
+function appendElementsToTheirParent({parentElement, childElements}){
+    childElements.forEach(child => parentElement.appendChild(child));
 }
 
 function drawPlanetTable({className, results}){

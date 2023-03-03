@@ -43,12 +43,22 @@ body {
     margin: 0 0 10px 0;
 }
 
-#pagination > button.next {
-    margin: 0 0 10px 5px;
+#pagination > button.disabled {
+    cursor: auto;
 }
 
-#pagination > button:hover {
+#pagination > button.previous:hover,
+#pagination > button.next:hover {
     box-shadow: 4px 4px 8px cornflowerblue;
+}
+
+#pagination > button.previous.disabled:hover,
+#pagination > button.next.disabled:hover {
+    box-shadow: none;
+}
+
+#pagination > button.next {
+    margin: 0 0 10px 5px;
 }
 
 button.residents,
