@@ -1,4 +1,8 @@
 
+* {
+  box-sizing: border-box;
+}
+
 body {
     margin: 0px 0px 8px 0px;
 }
@@ -61,21 +65,7 @@ body {
     margin: 0 0 10px 5px;
 }
 
-button.residents,
-button.vote {
-    color: black;
-    background-color: lightgray;
-    border-color: lightgray;
-    border-radius: 5%;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-button.residents:hover,
-button.vote:hover
-{
-    box-shadow: 4px 4px 8px lightgray;
-}
+/*Planet table, Residents table*/
 
 th, td {
     padding: 5px;
@@ -92,24 +82,94 @@ table {
     border-spacing: 0;
 }
 
+button.residents,
+button.vote,
+#modal > div > button {
+    color: black;
+    background-color: lightgray;
+    border-color: lightgray;
+    border-radius: 5%;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button.residents:hover,
+button.vote:hover,
+#modal > div > button:hover {
+    box-shadow: 4px 4px 8px lightgray;
+}
+
+/*End - Planet table, Residents table*/
+
+/* Planet table */
+
 @media (max-width: 705px) {
-  table {
+  table.planet {
     display: block;
   }
-  table thead {
+  table.planet thead {
     display: none;
   }
-  table tbody {
+  table.planet tbody {
     display: block;
   }
-  table tbody tr {
+  table.planet tbody tr {
     display: block;
     margin-bottom: 10px;
   }
-  table tbody td {
+  table.planet tbody td {
     display: block;
     text-align: right;
     padding: 10px;
     font-size: 16px;
   }
 }
+
+/* End - Planet table */
+
+/* Residents table */
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#modal {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    background-color: white;
+    border-radius: 5px;
+    border: solid lightgray;
+}
+
+#modal > div.modal-header {
+    display: flex;
+    align-items: center;
+    padding: 25px 25px 10px 25px;
+}
+
+#modal > div.modal-header > button {
+    margin-left: auto;
+}
+
+#modal > div.modal-body {
+    padding: 25px 25px 25px 25px;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
+
+#modal > div.modal-footer {
+    padding: 10px 25px 25px 25px;
+    display: flex;
+    justify-content: right;
+}
+
+/* End - Residents table */
+/* End - Style of dynamically added elements:*/
