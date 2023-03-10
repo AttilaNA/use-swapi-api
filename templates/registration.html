@@ -1,5 +1,14 @@
 {% extends "layout.html" %}
+{% block style %}<link rel="stylesheet" type="text/css" href="../static/css/form.css">{% endblock %}
 {% block body %}
-    <h1>I am the registration page</h1>
-    <p>Currently I am under preparation.</p>
+    <div id="registration">
+        <h1>Registration</h1>
+        <form action="/registration" method="post">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="username">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 {% endblock %}

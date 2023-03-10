@@ -1,46 +1,4 @@
 
-* {
-  box-sizing: border-box;
-}
-
-body {
-    margin: 0px 0px 8px 0px;
-}
-
-#navbar {
-    display: flex;
-    position: sticky;
-    top: 0px;
-    background-color: #eeeeee;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-@media (max-width: 430px) {
-    #navbar {
-        display: block;
-    }
-}
-
-#navbar > a {
-    text-decoration: none;
-}
-
-#navbar > a > p {
-    color: gray;
-    margin-inline-start: 1em;
-    cursor: pointer;
-}
-
-#navbar > a > p:hover {
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-#body {
-    margin: 0px 20px;
-}
-
-/*Style of dynamically added elements:*/
-
 #pagination > button {
     color: white;
     background-color: cornflowerblue;
@@ -176,4 +134,3 @@ button.vote:hover,
 }
 
 /* End - Residents table */
-/* End - Style of dynamically added elements:*/
