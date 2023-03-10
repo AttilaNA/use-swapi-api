@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Star Wars universe planets</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    {% block script %} {% endblock %}
+</head>
+<body>
+    <div id="navbar">
+        <a href="/"><p>Planet list</p></a>
+        <a href="voting-statistics"><p>Voting statistics</p></a>
+        <a href="/registration"><p>Registration</p></a>
+        <a href="/login"><p>Login</p></a>
+    </div>
+    <div id="body">
+        {% block body %}{% endblock %}
+    </div>
+</body>
+</html>
