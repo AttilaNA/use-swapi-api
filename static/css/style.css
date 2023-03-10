@@ -21,13 +21,17 @@ body {
     }
 }
 
-#navbar > p {
+#navbar > a {
+    text-decoration: none;
+}
+
+#navbar > a > p {
     color: gray;
     margin-inline-start: 1em;
     cursor: pointer;
 }
 
-#navbar > p:hover {
+#navbar > a > p:hover {
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
