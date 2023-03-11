@@ -22,9 +22,12 @@
 #login > form {
     display: flex;
     flex-direction: column;
-    margin-bottom: 25px;
     align-content: center;
     flex-wrap: wrap;
+}
+
+#registration > form {
+     margin-bottom: 25px;
 }
 
 #registration > form > input,
@@ -46,7 +49,37 @@
     margin: 0 auto 10px auto;
 }
 
+#registration > form > button {
+    margin: 0 auto 10px auto;
+}
+
+#login > form > button {
+    margin: 0 auto 20px auto;
+}
+
 #registration > form > button:hover,
 #login > form > button:hover {
     box-shadow: 4px 4px 8px cornflowerblue;
+}
+
+#login > div {
+    margin-bottom: 25px;
+}
+
+#login > div > a {
+    text-decoration: none;
+}
+
+#login > div > p,
+#login > div > a > p {
+    display: inline;
+}
+
+#login > div > a > p {
+    color: gray;
+    cursor: pointer;
+}
+
+#login > div > a > p:hover {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
 }
